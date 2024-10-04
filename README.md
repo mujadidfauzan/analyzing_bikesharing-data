@@ -37,10 +37,10 @@ cnt: jumlah total penyewaan sepeda.
 Clone repository ini ke komputer lokal Anda menggunakan perintah berikut:
 ```bash
 git clone https://github.com/wandadesi/dicoding_submission.git
-
-## Instalas Library
+Instalasi Library
 pip install streamlit
 pip install -r dashboard/requirements.txt
+```
 
 ## Penggunaan
 Masuk ke direktori proyek (Local):
