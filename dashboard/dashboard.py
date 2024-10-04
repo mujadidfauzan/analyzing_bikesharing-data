@@ -122,30 +122,13 @@ st.pyplot(plt)
 # Plot: Bar plot for bike rentals by season
 st.subheader('Jumlah Penyewaan Sepeda Berdasarkan Musim')
 
-# Create a new column for season based on the month
-season_map = {
-    1: 'Winter', 2: 'Winter', 3: 'Spring', 4: 'Spring',
-    5: 'Spring', 6: 'Summer', 7: 'Summer', 8: 'Summer',
-    9: 'Fall', 10: 'Fall', 11: 'Fall', 12: 'Winter'
-}
-
-df['season'] = df['mnth'].map(season_map)
-
-# Filter the data for the selected month
-season_output = df[df['mnth'] == selected_month_number]
-
-# Group by season and count rentals
-season_counts = season_output.groupby('season')['cnt'].sum().reset_index()
-
-# Plot the seasonal rentals
 plt.figure(figsize=(10, 6))
-sns.barplot(x='season', y='cnt', data=season_counts, palette='viridis')
+sns.barplot(x='season', y='cnt', data=df, palette='viridis')  # Using the entire dataset for season plot
 
 plt.title('Jumlah Penyewaan Sepeda Berdasarkan Musim')
 plt.xlabel('Musim')
 plt.ylabel('Jumlah Penyewaan Sepeda')
-
-plt.xticks(ticks=np.arange(4), labels=['Spring', 'Summer', 'Fall', 'Winter'])  # Labeling seasons
+plt.xticks(ticks=[0, 1, 2, 3], labels=['Spring', 'Summer', 'Fall', 'Winter'])  # Labeling seasons
 
 plt.tight_layout()
 st.pyplot(plt)
