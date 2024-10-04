@@ -24,7 +24,7 @@ def load_data(path: str):
     return data
 
 # Load dataset
-df = load_data('main_data.csv')  # Update this path to your CSV file
+df = load_data('../dashboard/main_data.csv')  # Update this path to your CSV file
 
 # Create dictionary for months
 months = {
